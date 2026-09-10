@@ -1,32 +1,90 @@
 <!doctype html>
-<!-- TODO: Cambia el idioma y completa la informacion del sitio. -->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Escribe una descripcion real de tu proyecto. -->
-    <meta name="description" content="" />
-    <!-- TODO: Pon el titulo real de tu pagina. -->
-    <title></title>
+    <meta
+      name="description"
+      content="Una introduccion visual a la estructura y las funciones del RNA."
+    />
+    <title>RNA en 3D | Una mirada a la molécula</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <!-- TODO: Crea un header con la identidad de tu sitio. -->
     <header>
-      <!-- TODO: Construye la navegacion con enlaces a las secciones. -->
-      <nav aria-label="Navegacion principal"></nav>
+      <!-- La navegacion conecta las partes principales del proyecto. -->
+      <nav aria-label="Navegacion principal">
+        <a class="brand" href="#inicio">RNA<span>3D</span></a>
+        <ul>
+          <li><a href="#explorar">Explorar</a></li>
+          <li><a href="#conceptos">Conceptos</a></li>
+          <li><a href="#tipos">Tipos de RNA</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- TODO: Agrega un unico h1 y el contenido principal de tu proyecto. -->
     <main>
-      <!-- TODO: Crea al menos tres secciones semanticas relacionadas con tu tema. -->
-      <section></section>
-      <section></section>
-      <section></section>
+      <!-- Esta introduccion presenta el tema y orienta al visitante. -->
+      <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+        <p class="eyebrow">Biología molecular · Estructura y función</p>
+        <h1 id="titulo-principal">El RNA también tiene una arquitectura.</h1>
+        <p class="hero-text">
+          Una molécula flexible que se pliega, se adapta y participa en algunas
+          de las tareas más importantes de la vida celular.
+        </p>
+        <a class="button" href="#explorar">Conocer su estructura</a>
+      </section>
+      <!-- Esta seccion sera el espacio para integrar el visor molecular. -->
+      <section id="explorar" aria-labelledby="explorar-titulo">
+        <p class="eyebrow">01 · Explorar</p>
+        <h2 id="explorar-titulo">Una forma que guarda información</h2>
+        <p>
+          En el siguiente paso incorporaremos aquí un modelo tridimensional
+          real del RNA para observar sus pliegues y componentes.
+        </p>
+        <div class="viewer-placeholder" aria-label="Espacio reservado para el visor 3D">
+          <span>Visor RNA 3D</span>
+          <small>Modelo molecular próximamente</small>
+        </div>
+      </section>
+
+      <!-- Estas tarjetas resumiran los conceptos cientificos principales. -->
+      <section id="conceptos" aria-labelledby="conceptos-titulo">
+        <p class="eyebrow">02 · Conceptos</p>
+        <h2 id="conceptos-titulo">Leer una molécula</h2>
+        <div class="concept-grid">
+          <article>
+            <h3>Una cadena flexible</h3>
+            <p>El RNA suele ser una cadena sencilla capaz de plegarse sobre sí misma.</p>
+          </article>
+          <article>
+            <h3>Cuatro bases</h3>
+            <p>Sus nucleótidos contienen adenina, uracilo, citosina o guanina.</p>
+          </article>
+          <article>
+            <h3>Forma y función</h3>
+            <p>El plegamiento tridimensional ayuda a cada RNA a cumplir su tarea.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Esta seccion dejara preparada la interaccion con JavaScript. -->
+      <section id="tipos" aria-labelledby="tipos-titulo">
+        <p class="eyebrow">03 · Tipos</p>
+        <h2 id="tipos-titulo">Tres protagonistas celulares</h2>
+        <div class="type-list">
+          <button class="type-button is-active" type="button">mRNA</button>
+          <button class="type-button" type="button">tRNA</button>
+          <button class="type-button" type="button">rRNA</button>
+        </div>
+        <p id="type-description">Lleva la información genética desde el DNA hasta los ribosomas.</p>
+      </section>
     </main>
 
-    <!-- TODO: Agrega el contenido final, enlaces y datos de contacto. -->
-    <footer></footer>
+    <footer>
+      <p>RNA en 3D · Proyecto educativo de biología molecular</p>
+      <a href="https://www.rcsb.org/structure/1EHZ" target="_blank" rel="noreferrer">Fuente estructural: RCSB PDB</a>
+    </footer>
   </body>
 </html>
