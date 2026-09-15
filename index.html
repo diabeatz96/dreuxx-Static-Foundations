@@ -1,90 +1,504 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Una introduccion visual a la estructura y las funciones del RNA."
+      content="Un cuaderno visual sobre el RNA: explora una estructura real de tRNA y conoce las moléculas que ayudan a fabricar proteínas."
     />
-    <title>RNA en 3D | Una mirada a la molécula</title>
+    <meta name="theme-color" content="#f5f3eb" />
+    <title>RNA en 3D — Un pequeño cuaderno molecular</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="assets/data/structure.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <header>
-      <!-- La navegacion conecta las partes principales del proyecto. -->
-      <nav aria-label="Navegacion principal">
-        <a class="brand" href="#inicio">RNA<span>3D</span></a>
-        <ul>
-          <li><a href="#explorar">Explorar</a></li>
-          <li><a href="#conceptos">Conceptos</a></li>
-          <li><a href="#tipos">Tipos de RNA</a></li>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <nav class="site-nav page-width" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="RNA en 3D, inicio">
+          <svg viewBox="0 0 32 40" width="28" height="36" aria-hidden="true">
+            <path
+              d="M8 37V15a8 8 0 0 1 16 0v22M8 23h16M8 29h16M8 35h16"
+            />
+          </svg>
+          <span
+            >RNA<span class="brand-subtitle">EN TRES DIMENSIONES</span></span
+          >
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          hidden
+        >
+          Menú <span aria-hidden="true">+</span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="#explorar"><span>01</span> Explorar</a>
+          </li>
+          <li>
+            <a href="#conceptos"><span>02</span> Lo esencial</a>
+          </li>
+          <li>
+            <a href="#tipos"><span>03</span> Tipos de RNA</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <!-- Esta introduccion presenta el tema y orienta al visitante. -->
-      <section class="hero" id="inicio" aria-labelledby="titulo-principal">
-        <p class="eyebrow">Biología molecular · Estructura y función</p>
-        <h1 id="titulo-principal">El RNA también tiene una arquitectura.</h1>
-        <p class="hero-text">
-          Una molécula flexible que se pliega, se adapta y participa en algunas
-          de las tareas más importantes de la vida celular.
-        </p>
-        <a class="button" href="#explorar">Conocer su estructura</a>
+    <main id="contenido" tabindex="-1">
+      <section
+        class="hero page-width"
+        id="inicio"
+        aria-labelledby="titulo-principal"
+      >
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="small-dot" aria-hidden="true"></span> Un pequeño
+            cuaderno molecular
+          </p>
+          <h1 id="titulo-principal">
+            El RNA también tiene una <em>arquitectura.</em>
+          </h1>
+          <p class="hero-text">
+            Una cadena se dobla, encuentra su forma y se pone a trabajar.
+            Mirarla de cerca ayuda a entender cómo funciona la vida a una escala
+            que no podemos ver.
+          </p>
+          <a class="button" href="#explorar"
+            >Acercarse a la molécula <span aria-hidden="true">↗</span></a
+          >
+          <p class="hero-note">
+            Estructura, cuatro bases y tres protagonistas.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <div class="figure-heading">
+            <span>FIG. 01</span><span>tRNA · PDB 1EHZ</span>
+          </div>
+          <img
+            src="assets/images/trna-molecule.svg"
+            width="720"
+            height="720"
+            fetchpriority="high"
+            alt="Modelo atómico del tRNA de fenilalanina de levadura, plegado en forma de L. Su anticodón aparece en naranja."
+          />
+          <div class="figure-label">
+            <span class="label-line" aria-hidden="true"></span> Una cadena,
+            muchos pliegues.
+          </div>
+          <figcaption>
+            <span>tRNA de fenilalanina · Levadura</span
+            ><a href="https://www.rcsb.org/structure/1EHZ"
+              >Ver el registro <span aria-hidden="true">↗</span></a
+            >
+          </figcaption>
+        </figure>
       </section>
-      <!-- Esta seccion sera el espacio para integrar el visor molecular. -->
-      <section id="explorar" aria-labelledby="explorar-titulo">
-        <p class="eyebrow">01 · Explorar</p>
-        <h2 id="explorar-titulo">Una forma que guarda información</h2>
+
+      <div class="reading-strip page-width">
         <p>
-          En el siguiente paso incorporaremos aquí un modelo tridimensional
-          real del RNA para observar sus pliegues y componentes.
+          <span class="eyebrow">La idea de partida</span> La secuencia importa.
+          <em>La forma, también.</em>
         </p>
-        <div class="viewer-placeholder" aria-label="Espacio reservado para el visor 3D">
-          <span>Visor RNA 3D</span>
-          <small>Modelo molecular próximamente</small>
+        <span class="strip-mark" aria-hidden="true">A — U &nbsp; G — C</span>
+      </div>
+
+      <!-- Explorar la cadena. -->
+      <section
+        class="section page-width"
+        id="explorar"
+        aria-labelledby="explorar-titulo"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">01 / Mirar de cerca</p>
+          <h2 id="explorar-titulo">Del hilo al pliegue.</h2>
+          <p>
+            En un dibujo plano, el tRNA suele parecer un trébol. En el espacio,
+            sus brazos se organizan en una forma de L.
+          </p>
+        </div>
+        <div class="explorer-grid">
+          <figure class="molecule-viewer">
+            <div class="viewer-topline">
+              <span
+                ><span class="small-dot" aria-hidden="true"></span> Cadena
+                A</span
+              ><span>1EHZ / tRNA</span>
+            </div>
+            <img
+              id="model-fallback"
+              src="assets/images/trna-backbone.svg"
+              width="640"
+              height="500"
+              loading="lazy"
+              alt="Recorrido tridimensional de los 76 nucleótidos del tRNA, representados como puntos unidos."
+            />
+            <svg
+              id="rna-model"
+              viewBox="0 0 640 500"
+              role="img"
+              aria-labelledby="model-title model-desc"
+              hidden
+            >
+              <title id="model-title">Estructura simplificada del tRNA</title>
+              <desc id="model-desc">
+                76 puntos siguen la cadena del tRNA. Usa los controles para
+                girar la vista o destacar el anticodón.
+              </desc>
+              <g id="model-shapes"></g>
+            </svg>
+            <div class="viewer-legend">
+              <span
+                ><i class="legend-dot chain-dot" aria-hidden="true"></i> Cadena
+                de RNA</span
+              ><span
+                ><i class="legend-dot anticodon-dot" aria-hidden="true"></i>
+                Anticodón, al resaltarlo</span
+              >
+            </div>
+            <div class="viewer-controls" id="viewer-controls" hidden>
+              <div class="rotation-control">
+                <label for="rotation">Girar la vista</label>
+                <input
+                  type="range"
+                  id="rotation"
+                  min="-180"
+                  max="180"
+                  value="0"
+                  step="1"
+                />
+                <output for="rotation" id="rotation-value">0°</output>
+              </div>
+              <div class="viewer-actions">
+                <button type="button" id="rotate-button">
+                  Girar 30° <span aria-hidden="true">↻</span>
+                </button>
+                <button
+                  type="button"
+                  id="highlight-button"
+                  aria-pressed="false"
+                >
+                  Resaltar anticodón
+                </button>
+                <button type="button" id="reset-view">Restablecer</button>
+              </div>
+            </div>
+            <figcaption>
+              Cada punto corresponde a un carbono C4′. Las líneas siguen
+              nucleótidos consecutivos; esta vista simplifica la estructura
+              atómica.
+            </figcaption>
+          </figure>
+          <div class="explorer-notes">
+            <span class="note-kicker">La pieza que estamos mirando</span>
+            <h3>Un adaptador diminuto.</h3>
+            <p>
+              Este tRNA ayuda a incorporar fenilalanina a una proteína. Un
+              extremo lleva el aminoácido; el otro reconoce un codón del RNA
+              mensajero.
+            </p>
+            <dl class="spec-list">
+              <div>
+                <dt>Longitud</dt>
+                <dd>76 <span>nucleótidos</span></dd>
+              </div>
+              <div>
+                <dt>Organismo</dt>
+                <dd><i lang="la">S. cerevisiae</i></dd>
+              </div>
+              <div>
+                <dt>Resolución experimental</dt>
+                <dd>1,93 <span>Å</span></dd>
+              </div>
+            </dl>
+            <div class="observation">
+              <p class="eyebrow">Fíjate en esto</p>
+              <p id="model-note" role="status">
+                El anticodón ocupa solo tres posiciones de la cadena: 34, 35 y
+                36. Resáltalo para encontrarlo.
+              </p>
+            </div>
+            <a class="text-link" href="assets/data/1EHZ.pdb" download
+              >Descargar las coordenadas originales
+              <span aria-hidden="true">↓</span></a
+            >
+            <noscript
+              ><p class="noscript-note">
+                La imagen muestra la estructura completa. Activa JavaScript para
+                girarla y resaltar el anticodón.
+              </p></noscript
+            >
+          </div>
         </div>
       </section>
 
-      <!-- Estas tarjetas resumiran los conceptos cientificos principales. -->
-      <section id="conceptos" aria-labelledby="conceptos-titulo">
-        <p class="eyebrow">02 · Conceptos</p>
-        <h2 id="conceptos-titulo">Leer una molécula</h2>
-        <div class="concept-grid">
-          <article>
-            <h3>Una cadena flexible</h3>
-            <p>El RNA suele ser una cadena sencilla capaz de plegarse sobre sí misma.</p>
-          </article>
-          <article>
-            <h3>Cuatro bases</h3>
-            <p>Sus nucleótidos contienen adenina, uracilo, citosina o guanina.</p>
-          </article>
-          <article>
-            <h3>Forma y función</h3>
-            <p>El plegamiento tridimensional ayuda a cada RNA a cumplir su tarea.</p>
-          </article>
+      <!-- Tres ideas básicas. -->
+      <section
+        class="concept-section"
+        id="conceptos"
+        aria-labelledby="conceptos-titulo"
+      >
+        <div class="page-width section">
+          <div class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">02 / Lo esencial</p>
+              <h2 id="conceptos-titulo">Antes de seguir,<br />tres ideas.</h2>
+            </div>
+            <p>
+              RNA significa ácido ribonucleico; en español también lo
+              encontrarás como ARN. Estas son las piezas del vocabulario.
+            </p>
+          </div>
+          <div class="concept-grid">
+            <article class="concept">
+              <span class="concept-number">01</span>
+              <img
+                src="assets/images/chain.svg"
+                width="320"
+                height="130"
+                alt="Esquema de una cadena de RNA que se curva sobre sí misma."
+                loading="lazy"
+              />
+              <h3>Una cadena flexible</h3>
+              <p>
+                El RNA suele tener una sola cadena. Su esqueleto alterna ribosa
+                y fosfato, y puede plegarse formando tallos y bucles.
+              </p>
+            </article>
+            <article class="concept">
+              <span class="concept-number">02</span>
+              <img
+                src="assets/images/bases.svg"
+                width="320"
+                height="130"
+                alt="Adenina, uracilo, guanina y citosina, representadas por las letras A, U, G y C."
+                loading="lazy"
+              />
+              <h3>Cuatro bases principales</h3>
+              <p>
+                Adenina, uracilo, guanina y citosina. Sus letras —A, U, G y C—
+                permiten escribir la secuencia. En el RNA también existen bases
+                modificadas.
+              </p>
+            </article>
+            <article class="concept">
+              <span class="concept-number">03</span>
+              <img
+                src="assets/images/folding.svg"
+                width="320"
+                height="130"
+                alt="Esquema de bases complementarias que mantienen unido un tallo con un bucle."
+                loading="lazy"
+              />
+              <h3>La forma tiene un trabajo</h3>
+              <p>
+                Las interacciones entre distintas partes de la cadena ayudan a
+                darle forma. Esa estructura permite reconocer otras moléculas y
+                cumplir una función.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <!-- Esta seccion dejara preparada la interaccion con JavaScript. -->
-      <section id="tipos" aria-labelledby="tipos-titulo">
-        <p class="eyebrow">03 · Tipos</p>
-        <h2 id="tipos-titulo">Tres protagonistas celulares</h2>
-        <div class="type-list">
-          <button class="type-button is-active" type="button">mRNA</button>
-          <button class="type-button" type="button">tRNA</button>
-          <button class="type-button" type="button">rRNA</button>
+      <!-- Comparar sus funciones. -->
+      <section
+        class="section page-width"
+        id="tipos"
+        aria-labelledby="tipos-titulo"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">03 / Un trabajo en equipo</p>
+          <h2 id="tipos-titulo">Tres formas de participar.</h2>
+          <p>
+            Para fabricar una proteína hacen falta un mensaje, un adaptador y un
+            lugar de encuentro. Aquí entran estos tres tipos de RNA.
+          </p>
         </div>
-        <p id="type-description">Lleva la información genética desde el DNA hasta los ribosomas.</p>
+        <div
+          class="type-tabs"
+          id="type-tabs"
+          role="tablist"
+          aria-label="Tipos de RNA"
+          hidden
+        >
+          <button
+            class="type-button"
+            id="tab-mrna"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-mrna"
+            data-type="mrna"
+          >
+            <span>01</span> mRNA <small>El mensaje</small>
+          </button>
+          <button
+            class="type-button"
+            id="tab-trna"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-trna"
+            data-type="trna"
+            tabindex="-1"
+          >
+            <span>02</span> tRNA <small>El adaptador</small>
+          </button>
+          <button
+            class="type-button"
+            id="tab-rrna"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-rrna"
+            data-type="rrna"
+            tabindex="-1"
+          >
+            <span>03</span> rRNA <small>El ribosoma</small>
+          </button>
+        </div>
+        <article class="type-panel" id="panel-mrna">
+          <div class="type-copy">
+            <p class="eyebrow">RNA mensajero</p>
+            <h3>La información viaja<br />en una secuencia.</h3>
+            <p>
+              El mRNA lleva una copia de la información de un gen. Durante la
+              traducción, el ribosoma lee sus codones: grupos de tres
+              nucleótidos que indican aminoácidos o señales de terminación.
+            </p>
+            <p class="type-takeaway">
+              <span>Para recordarlo</span> Es el mensaje que se lee.
+            </p>
+          </div>
+          <figure class="type-figure">
+            <img
+              src="assets/images/mrna.svg"
+              width="500"
+              height="280"
+              loading="lazy"
+              alt="Fragmento esquemático de RNA mensajero con los codones AUG, GCU y UAC agrupados de tres en tres."
+            />
+            <figcaption>
+              Esquema de una secuencia, sin escala molecular.
+            </figcaption>
+          </figure>
+        </article>
+        <article class="type-panel" id="panel-trna">
+          <div class="type-copy">
+            <p class="eyebrow">RNA de transferencia</p>
+            <h3>Un puente entre<br />dos lenguajes.</h3>
+            <p>
+              El tRNA conecta un codón con el aminoácido correspondiente. Su
+              anticodón se aparea con el mRNA, mientras el extremo 3′ lleva el
+              aminoácido que se incorporará a la proteína.
+            </p>
+            <p class="type-takeaway">
+              <span>Para recordarlo</span> Es el adaptador que hace la entrega.
+            </p>
+          </div>
+          <figure class="type-figure">
+            <img
+              src="assets/images/trna.svg"
+              width="500"
+              height="280"
+              loading="lazy"
+              alt="Esquema de un tRNA con el aminoácido en el extremo 3′ y el anticodón en el extremo opuesto."
+            />
+            <figcaption>
+              Esquema funcional; el modelo real está en el explorador.
+            </figcaption>
+          </figure>
+        </article>
+        <article class="type-panel" id="panel-rrna">
+          <div class="type-copy">
+            <p class="eyebrow">RNA ribosómico</p>
+            <h3>Parte de la máquina<br />que une las piezas.</h3>
+            <p>
+              El rRNA forma el núcleo estructural y catalítico del ribosoma,
+              junto con proteínas. Participa en la colocación de los tRNA y en
+              la formación de enlaces entre aminoácidos.
+            </p>
+            <p class="type-takeaway">
+              <span>Para recordarlo</span> Ayuda a construir la proteína.
+            </p>
+          </div>
+          <figure class="type-figure">
+            <img
+              src="assets/images/rrna.svg"
+              width="500"
+              height="280"
+              loading="lazy"
+              alt="Esquema de las dos subunidades de un ribosoma, con RNA mensajero pasando entre ellas y una cadena de aminoácidos saliendo."
+            />
+            <figcaption>
+              Las formas resumen el ribosoma, que contiene RNA y proteínas.
+            </figcaption>
+          </figure>
+        </article>
+        <p class="margin-note">
+          Y no son los únicos: otros RNA participan, por ejemplo, en la
+          regulación de la expresión de los genes.
+        </p>
+      </section>
+
+      <section
+        class="sources-section page-width"
+        id="fuentes"
+        aria-labelledby="fuentes-titulo"
+      >
+        <div>
+          <p class="eyebrow">Para seguir leyendo</p>
+          <h2 id="fuentes-titulo">Volver a la fuente.</h2>
+          <p>
+            La ilustración molecular y el explorador usan las coordenadas del
+            mismo registro experimental.
+          </p>
+        </div>
+        <ol class="source-list">
+          <li>
+            <a href="https://www.rcsb.org/structure/1EHZ"
+              ><span
+                ><strong>La estructura · PDB 1EHZ</strong
+                ><small>Shi y Moore, 2000 · RCSB Protein Data Bank</small></span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.genome.gov/genetics-glossary/RNA-Ribonucleic-Acid"
+              ><span
+                ><strong>Qué es el RNA</strong
+                ><small>National Human Genome Research Institute</small></span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </li>
+          <li>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK26829/"
+              ><span
+                ><strong>Del RNA a la proteína</strong
+                ><small
+                  >Molecular Biology of the Cell · NCBI Bookshelf</small
+                ></span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </li>
+        </ol>
       </section>
     </main>
 
-    <footer>
-      <p>RNA en 3D · Proyecto educativo de biología molecular</p>
-      <a href="https://www.rcsb.org/structure/1EHZ" target="_blank" rel="noreferrer">Fuente estructural: RCSB PDB</a>
+    <footer class="site-footer page-width">
+      <p>
+        <strong>RNA en 3D</strong
+        ><span>Giovanny Rodríguez · Static Foundations</span>
+      </p>
+      <a href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a>
     </footer>
   </body>
 </html>
