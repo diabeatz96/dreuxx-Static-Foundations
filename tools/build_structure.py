@@ -63,7 +63,7 @@ points = [{"residue": atom["residue"],
            "position": [round(value, 4) for value in orient(atom["position"])]}
           for atom in backbone]
 (ROOT / "assets/data/structure.js").write_text(
-    "// Carbonos C4′ de la cadena A, PDB 1EHZ.\nconst rnaPoints = "
+    "// C4′ carbons from chain A, PDB 1EHZ.\nconst rnaPoints = "
     + json.dumps(points, separators=(",", ":")) + ";\n"
 )
 
@@ -74,9 +74,9 @@ def svg_open(width, height, title, description):
             f'<title id="title">{title}</title><desc id="desc">{description}</desc>']
 
 
-svg = svg_open(720, 720, "tRNA de fenilalanina de levadura",
-               "Representación de los 1652 átomos del RNA en la cadena A de PDB 1EHZ. "
-               "El anticodón, residuos 34 a 36, aparece en naranja.")
+svg = svg_open(720, 720, "Yeast phenylalanine tRNA",
+               "Representation of the 1652 atoms in the RNA chain A of PDB 1EHZ. "
+               "The anticodon, residues 34 to 36, appears in orange.")
 svg.append('<defs>')
 for name, light, mid, dark in [
     ("green", "#d5dea2", "#829254", "#354d32"),
@@ -98,9 +98,9 @@ for (x, y, z), atom in projected:
 svg.append('</svg>')
 (ROOT / "assets/images/trna-molecule.svg").write_text("\n".join(svg))
 
-svg = svg_open(640, 500, "Recorrido de la cadena del tRNA",
-               "Los 76 puntos siguen los carbonos C4′ de PDB 1EHZ; "
-               "las líneas conectan nucleótidos consecutivos.")
+svg = svg_open(640, 500, "Path of the tRNA strand",
+               "The 76 points follow the C4′ carbons of PDB 1EHZ; "
+               "the lines connect consecutive nucleotides.")
 radius = max(math.sqrt(dot(point["position"], point["position"])) for point in points)
 scale = 190 / radius
 items = []

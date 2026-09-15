@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="130" viewBox="0 0 320 130" role="img" aria-labelledby="title">
-  <title id="title">Esquema de un tallo con un bucle</title>
+  <title id="title">Diagram of a stem and loop</title>
   <path d="M31 46h143c-11-37 89-43 105-1 22 56-86 76-105 37H31" fill="none" stroke="#637e54" stroke-width="3"/>
   <g stroke="#9b694b" stroke-width="3" stroke-linecap="round"><path d="M58 48v32M87 48v32M116 48v32M145 48v32"/></g>
   <g fill="#eaece2" stroke="#49633e" stroke-width="2">

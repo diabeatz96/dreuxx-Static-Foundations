@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
-<title id="title">tRNA de fenilalanina de levadura</title><desc id="desc">Representación de los 1652 átomos del RNA en la cadena A de PDB 1EHZ. El anticodón, residuos 34 a 36, aparece en naranja.</desc>
+<title id="title">Yeast phenylalanine tRNA</title><desc id="desc">Representation of the 1652 atoms in the RNA chain A of PDB 1EHZ. The anticodon, residues 34 to 36, appears in orange.</desc>
 <defs>
 <radialGradient id="green" cx="32%" cy="25%" r="75%"><stop offset="0" stop-color="#d5dea2"/><stop offset=".5" stop-color="#829254"/><stop offset="1" stop-color="#354d32"/></radialGradient>
 <radialGradient id="orange" cx="32%" cy="25%" r="75%"><stop offset="0" stop-color="#f3d4a3"/><stop offset=".5" stop-color="#c37c4d"/><stop offset="1" stop-color="#7a3e27"/></radialGradient>

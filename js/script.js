@@ -1,4 +1,4 @@
-// Menú móvil.
+// Mobile menu.
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#nav-links");
 const mobileScreen = window.matchMedia("(max-width: 640px)");
@@ -42,7 +42,7 @@ mobileScreen.addEventListener("change", () => {
   }
 });
 
-// Pestañas con teclado.
+// Keyboard-accessible tabs.
 const typeButtons = Array.from(document.querySelectorAll(".type-button"));
 const typePanels = Array.from(document.querySelectorAll(".type-panel"));
 
@@ -82,7 +82,7 @@ typeButtons.forEach((button, index) => {
 selectType(typeButtons[0]);
 document.querySelector("#type-tabs").hidden = false;
 
-// Proyectar la estructura.
+// Project the structure.
 function setupModel(points) {
   const model = document.querySelector("#rna-model");
   const shapes = document.querySelector("#model-shapes");
@@ -149,7 +149,7 @@ function setupModel(points) {
       });
     });
 
-    // Dibujar del fondo al frente.
+    // Draw from back to front.
     shapes.innerHTML = pieces
       .sort((a, b) => a.depth - b.depth)
       .map((piece) => piece.markup)
@@ -157,11 +157,11 @@ function setupModel(points) {
     rotationValue.textContent = degrees + "°";
     rotation.setAttribute("aria-valuetext", degrees + " grados");
     modelDescription.textContent =
-      "76 puntos siguen la cadena del tRNA. Vista girada " +
+      "76 points follow the tRNA strand. View rotated " +
       degrees +
-      " grados." +
+      " degrees." +
       (highlighted
-        ? " Anticodón resaltado en naranja: posiciones 34, 35 y 36."
+        ? " Anticodon highlighted in orange: positions 34, 35, and 36."
         : "");
   }
 
@@ -175,7 +175,7 @@ function setupModel(points) {
     highlighted = !highlighted;
     highlightButton.setAttribute("aria-pressed", String(highlighted));
     note.textContent = highlighted
-      ? "Los tres puntos naranjas son el anticodón: posiciones 34, 35 y 36. Esta región reconoce el codón del mRNA."
+      ? "The three orange points are the anticodon: positions 34, 35, and 36. This region recognizes the mRNA codon."
       : initialNote;
     drawModel();
   });
@@ -183,7 +183,7 @@ function setupModel(points) {
     rotation.value = 0;
     highlighted = false;
     highlightButton.setAttribute("aria-pressed", "false");
-    note.textContent = "Vista inicial restablecida. " + initialNote;
+    note.textContent = "Initial view restored. " + initialNote;
     drawModel();
   });
 

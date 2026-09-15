@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
-<title id="title">Recorrido de la cadena del tRNA</title><desc id="desc">Los 76 puntos siguen los carbonos C4′ de PDB 1EHZ; las líneas conectan nucleótidos consecutivos.</desc>
+<title id="title">Path of the tRNA strand</title><desc id="desc">The 76 points follow the C4′ carbons of PDB 1EHZ; the lines connect consecutive nucleotides.</desc>
 <line x1="331.72" y1="187.29" x2="348.28" y2="167.48" stroke="#a8bd82" stroke-width="7" stroke-linecap="round"/>
 <circle cx="331.72" cy="187.29" r="5" fill="#dce7b8" stroke="#273e32" stroke-width="1.5"/>
 <circle cx="348.28" cy="167.48" r="5" fill="#dce7b8" stroke="#273e32" stroke-width="1.5"/>
