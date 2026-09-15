@@ -1,24 +1,30 @@
-# Static-Foundations
+# Static Foundations
 
-## Objetivo del proyecto
+## Project Goal
 
-Construir y publicar un sitio web estático, accesible y responsive que demuestre fundamentos sólidos de HTML, CSS y JavaScript mediante contenido real y una experiencia cuidada.
+Build and publish an accessible, responsive static website that demonstrates strong HTML, CSS, and JavaScript fundamentals through real content and a thoughtful experience.
 
-El proyecto debe cumplir con los siguientes requisitos:
+The project must meet the following requirements:
 
-1. **Estructura semántica:** incluir al menos tres secciones de contenido diferenciadas usando elementos semánticos como `header`, `nav`, `main`, `section`, `article` y `footer`. Debe existir un único `h1`, con niveles de encabezado coherentes y sin saltos.
-2. **Flexbox y Grid:** utilizar ambas tecnologías para resolver partes reales del diseño. Por ejemplo, Flexbox para la barra de navegación y Grid para una galería de tarjetas o la estructura principal de la página.
-3. **Diseño responsive:** evitar el desplazamiento horizontal a 375 px y adaptar el diseño de forma significativa entre teléfonos y pantallas de escritorio mediante media queries o patrones intrínsecamente responsive como `auto-fit` con `minmax`.
-4. **Interactividad con JavaScript:** implementar al menos una interacción funcional, como un selector de tema, filtro de menú, validación de formulario o pestañas. La interacción debe seleccionar elementos, escuchar un evento y modificar la página.
-5. **Contenido real:** usar textos e imágenes auténticos que sean pertinentes al tema del sitio. No utilizar `lorem ipsum` ni imágenes de relleno estiradas.
-6. **Despliegue en Netlify:** publicar el sitio en Netlify y documentar aquí la URL pública activa cuando esté disponible.
+1. **Semantic structure:** Include at least three distinct content sections using semantic elements such as `header`, `nav`, `main`, `section`, `article`, and `footer`. There must be one `h1`, with a coherent heading hierarchy and no skipped levels.
+2. **Flexbox and Grid:** Use both technologies for real layout work. For example, Flexbox for the navigation bar and Grid for a card gallery or the main page structure.
+3. **Responsive design:** Avoid horizontal scrolling at 375 px and adapt the design meaningfully between phones and desktop screens using media queries or intrinsic patterns such as `auto-fit` with `minmax`.
+4. **JavaScript interactivity:** Implement at least one functional interaction, such as a theme selector, menu filter, form validation, or tabs. The interaction must select elements, listen for an event, and modify the page.
+5. **Real content:** Use authentic text and images relevant to the site's theme. Do not use `lorem ipsum` or stretched placeholder images.
+6. **Netlify deployment:** Publish the site on Netlify and document the active public URL here.
 
-**URL publicada:** pendiente de despliegue.
+**Published URL:** https://static-foundations.netlify.app/
 
-## Estructura de archivos
+## File Structure
 
-- `index.html`: aquí debes escribir la estructura semántica y el contenido.
-- `css/styles.css`: aquí debes escribir los estilos, Flexbox, Grid y responsive.
-- `js/script.js`: aquí debes escribir la interacción con JavaScript.
+- `index.html`: semantic structure and content.
+- `css/styles.css`: styles, Flexbox, Grid, and responsive behavior.
+- `js/script.js`: JavaScript interactions.
 
-Los archivos contienen comentarios `TODO` junto al lugar donde debes programar cada requisito. Para probarlo, abre `index.html` en el navegador y, cuando termines, publica la carpeta raíz en Netlify.
+To test the project locally, run a static server from the root folder:
+
+```bash
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000/` in your browser. The published version is available at https://static-foundations.netlify.app/.
