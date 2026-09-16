@@ -5,17 +5,17 @@
 
 > **How this review was made.** Your instructor reviewed this project with Claude (Anthropic's AI) as a second set of eyes. Claude cloned the repo, read every line of the HTML, the 1,075-line stylesheet, the script and the Python build tool, loaded the live site at phone, tablet and desktop widths, ran the W3C validator, worked every control on the page (the menu, the Escape key, the rotation slider, the rotate and highlight and reset buttons, all three tabs), diffed the live site against the repo, and read every commit including the two Spanish-language drafts from Sep 10. Every note and every point below was read and approved by your instructor. Same rubric, same standard, just more time spent looking at your code than one person has in a grading week.
 
-## Grade: 89 / 100
+## Grade: 90 / 100
 
 | Category | Points | Earned | One line |
 |---|---|---|---|
 | Semantic HTML | 20 | **19** | Skip link, labelled sections, figures with captions, a definition list, descriptive alt text, one h1; two validator errors, both about roles the JS adds later |
 | CSS layout | 25 | **24** | Ten tokens used 58 times, 20 Flexbox and 6 Grid containers, clamp, focus-visible, reduced-motion, print; desktop-first queries |
 | Responsive design | 15 | **15** | No horizontal scroll anywhere, every grid collapses, the menu closes on Escape and manages focus across the breakpoint |
-| JavaScript interaction | 15 | **14** | A menu, keyboard-accessible tabs, and a real 3D projection of a real molecule, all verified; one Spanish leftover in an aria attribute |
+| JavaScript interaction | 15 | **15** | A menu, keyboard-accessible tabs, and a real 3D projection of a real molecule, all verified |
 | Repository and deployment | 15 | **8** | README complete, deploy matches repo byte for byte; the finished site arrived in one 6,590-line commit on the due date, messages say "start" and "end" |
 | Content and polish | 10 | **9** | Real structure from the Protein Data Bank, cited sources, illustrations built from the coordinates; a comma decimal in an English page |
-| **Total** | **100** | **89** | The best site in the class and the thinnest history. The gap between those two facts is what we need to talk about. |
+| **Total** | **100** | **90** | The best site in the class and the thinnest history. The gap between those two facts is what we need to talk about. |
 
 ## The short version
 
@@ -75,7 +75,7 @@ The points came off in one place, and it is the place the brief warned about. Yo
 
 - No horizontal scroll at 375, 768 or 1280. Every grid drops to one column on the phone and every one of them does something different on the desktop. The nav wraps under 640 px and the menu button appears only when JavaScript is present (`.has-js .menu-toggle`), so without JS the links are simply visible. The `matchMedia` listener closes the menu and moves focus when the viewport crosses 640 px ([script.js#L36-L43](https://github.com/dreuxx/dreuxx-Static-Foundations/blob/cba619e72bcc842a1a4b87badaae4e7bd2d25d8a/js/script.js#L36-L43)), which is the detail almost nobody handles. Full marks.
 
-## JavaScript interaction: 14 / 15
+## JavaScript interaction: 15 / 15
 
 ### What's working
 
@@ -147,7 +147,7 @@ The brief allows AI and requires that you can explain every line you submit. Nob
 4. **The roving tabindex** ([#L49-L59](https://github.com/dreuxx/dreuxx-Static-Foundations/blob/cba619e72bcc842a1a4b87badaae4e7bd2d25d8a/js/script.js#L49-L59)). Why does only the selected tab get `tabIndex = 0`? What does Tab do versus ArrowRight?
 5. **The build tool** ([tools/build_structure.py](https://github.com/dreuxx/dreuxx-Static-Foundations/blob/cba619e72bcc842a1a4b87badaae4e7bd2d25d8a/tools/build_structure.py)). What is a C4′ carbon and why one per nucleotide? How does the script decide which atoms to keep?
 
-If those five come easily, this is a 89 that was earned, and you should be proud of it.
+If those five come easily, this is a 90 that was earned, and you should be proud of it.
 
 ---
 
